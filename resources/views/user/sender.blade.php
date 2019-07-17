@@ -28,7 +28,7 @@
   </p>
   <form action="/sender" method="post">
    <input type="text" name="message">
-   <input type ="submit">
+   <input type ="submit"> 
    {{csrf_field()}}
 </form>
 </body>
