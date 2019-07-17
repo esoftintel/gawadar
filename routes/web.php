@@ -13,7 +13,6 @@
 use App\Events\FormSubmitted;
 Route::post('/sender', function () {
     $text=request()->message ;
-   
     event(new FormSubmitted($text));
 });
 Route::get('/', function () {
@@ -151,7 +150,10 @@ Route::delete('ajax-remove-image_banner/{filename}', 'UserController@deleteImage
 
 
 Route::get('/chat','RatingController@show_chat');
+
 Route::get('/reciver','RatingController@reciver_chat');
+
+Route::get('/user_chat','RatingController@view_chat');
 
 
 

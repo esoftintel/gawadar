@@ -104,6 +104,12 @@ return Redirect::back();
     {
         return view('user.sender');
     }
+    public function view_chat()
+    {
+        return view('user.viewchat');
+    }
+
+
     public function reciver_chat()
     {
         return view('user.reciver');
