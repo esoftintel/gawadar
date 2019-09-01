@@ -1,0 +1,94 @@
+<?php
+
+namespace App\Http\Controllers\API;
+use Illuminate\Http\Request; 
+use App\Http\Controllers\Controller; 
+use App\User; 
+use App\category;
+use DB;
+//use Auth;
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use Validator;
+class auth_api extends Controller
+{
+       public function login(){ 
+
+            if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){ 
+                $user = Auth::user();
+                $success['status']=1;
+                $success['user']=$user;
+                $success['token'] =  $user->createToken('MyApp')-> accessToken; 
+                return response()->json(['result' => $success]); 
+            } 
+            else{ 
+                $unsuccess['status']=0;
+                $unsuccess['msg']='Username or Password is incorrect';
+                return response()->json(['result' => $unsuccess]); 
+            } 
+        }
+
+    public function register(Request $request) 
+    { 
+        $validator = Validator::make($request->all(), [ 
+            'name' => 'required', 
+            'email' => 'required|email', 
+            'password' => 'required', 
+            'c_password' => 'required|same:password', 
+        ]);
+       if ($validator->fails()) { 
+           
+            return response()->json(['status'=>0,'error'=>$validator->errors()], 401);            
+        }
+
+        $gs = Generalsetting::findOrFail(1);
+        $user = new User;
+        $input = $request->all(); 
+        $input['password'] = bcrypt($request['password']);
+        $input['affilate_code'] = $request->name.$request->email;
+        $input['affilate_code'] = md5($input['affilate_code']);
+        $user->fill($input)->save();
+
+        if($gs->is_smtp == 1)
+        {
+        $data = [
+            'to' => $request->email,
+            'type' => "new_registration",
+            'cname' => $request->name,
+            'oamount' => "",
+            'aname' => "",
+            'aemail' => "",
+        ];    
+        $mailer = new GeniusMailer();
+        $mailer->sendAutoMail($data);        
+        }
+
+        else
+            {
+           $to = $request->email;
+           $subject = 'Welcome To'.$gs->title;
+           $msg = "Hello ".$request->name.","."\n You have successfully registered to ".$gs->title."."."\n We wish you will have a wonderful experience using our service.";
+            $headers = "From: ".$gs->from_name."<".$gs->from_email.">";
+           mail($to,$subject,$msg.$headers);
+            
+
+            $notification = new Notification;
+            $notification->user_id = $user->id;
+            $notification->save();
+            }
+
+             $success['status'] = 1;
+             $success['user'] =  $user;
+             $success['token'] =  $user->createToken('MyApp')-> accessToken; 
+            
+            return response()->json(['success'=>$success], $this-> successStatus);  
+            
+         
+    
+    }
+
+
+        
+    
+}

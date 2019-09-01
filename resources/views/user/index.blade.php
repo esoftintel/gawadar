@@ -1,855 +1,883 @@
- @include('user.metadata')
+@include('user.templates.header')
+	
+	<body>
+	<?php $hotel=$contact=$blog=$about=$blogSingle=$hotelSingle=$tour='nav-item';
+          $index=$home='nav-item active';
+  ?>
+    
+  @include('user.templates.navbar')
+    
+		<div class="hero-wrap js-fullheight" style="background-image: url('{{ asset('userassets/images/bg_1.jpg')}}');">
+		
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
+          <div class="col-md-9 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><strong>Explore <br></strong> your amazing city</h1>
+            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Find great places to stay, eat, shop, or visit from local experts</p>
+            <div class="block-17 my-4">
+              <form action="" method="post" class="d-block d-flex">
+                <div class="fields d-block d-flex">
+                  <div class="textfield-search one-third">
+                  	<input type="text" class="form-control" placeholder="Ex: food, service, hotel">
+                  </div>
+                  <div class="select-wrap one-third">
+                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                    <select name="" id="" class="form-control" placeholder="Keyword search">
+                      <option value="">Where</option>
+                      <option value="">San Francisco USA</option>
+                      <option value="">Berlin Germany</option>
+                      <option value="">Lodon United Kingdom</option>
+                      <option value="">Paris Italy</option>
+                    </select>
+                  </div>
+                </div>
+                <input type="submit" class="search-submit btn btn-primary" value="Search">  
+              </form>
+            </div>
+            <p>Or browse the highlights</p>
+            <p class="browse d-md-flex">
+            	<span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-fork"></i>Restaurant</a></span>
+            	<span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-hotel"></i>Hotel</a></span> 
+            	<span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-meeting-point"></i>Places</a></span> 
+            	<span class="d-flex justify-content-md-center align-items-md-	center"><a href="#"><i class="flaticon-shopping-bag"></i>Shopping</a></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-@include('user.menu')
-        <div class="directory_content_area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 offset-lg-1">
-                        <div class="search_title_area">
-                            <h2 class="title">Find the Best Places to Be</h2>
-                            <p class="sub_title">All the top locations – from restaurants and clubs, to galleries, famous places and more..</p>
-                        </div><!-- ends: .search_title_area -->
-                        <form action="/" class="search_form">
-                            <div class="atbd_seach_fields_wrapper">
-                                <div class="single_search_field search_query">
-                                    <input class="form-control search_fields" type="text" placeholder="What are you looking for?">
-                                </div>
-                                <div class="single_search_field search_category">
-                                    <select class="search_fields" id="at_biz_dir-category">
-                                        <option value="">Select a category</option>
-                                        <option value="automobile">Automobile</option>
-                                        <option value="education">Education</option>
-                                        <option value="event">Event</option>
-                                    </select>
-                                </div>
-                                <div class="single_search_field search_location">
-                                    <select class="search_fields" id="at_biz_dir-location">
-                                        <option value="">Select a location</option>
-                                        <option value="ab">AB Simple</option>
-                                        <option value="australia">Australia</option>
-                                        <option value="australia-australia">Australia</option>
-                                    </select>
-                                </div>
-                                <div class="atbd_submit_btn">
-                                    <button type="submit" class="btn btn-block btn-gradient btn-gradient-one btn-md btn_search">Search</button>
-                                </div>
-                            </div>
-                        </form><!-- ends: .search_form -->
-                        <div class="directory_home_category_area">
-                            <ul class="categories">
-                                <li>
-                                    <a href="">
-                                        <span class="color-primary"><i class="la la-cutlery"></i></span>
-                                        Restaurants
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <span class="color-success"><i class="la la-map-marker"></i></span>
-                                        Places
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <span class="color-warning"><i class="la la-shopping-cart"></i></span>
-                                        Shopping
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <span class="color-danger"><i class="la la-bed"></i></span>
-                                        Hotels
-                                    </a>
-                                </li>
-                            </ul>
-                        </div><!-- ends: .directory_home_category_area -->
-                    </div><!-- ends: .col-lg-10 -->
-                </div>
-            </div>
-        </div><!-- ends: .directory_search_area -->
-    </section><!-- ends: .intro-wrapper -->
-    <section class="categories-cards section-padding-two">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>What Kind of Activity do you Want to try?</h2>
-                        <p>Discover best things to do restaurants, shopping, hotels, cafes and places around the world by categories.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="category-single category--img">
-                        <figure class="category--img4">
-                            <img src="{{ asset('img/cat1.jpg')}}" alt="">
-                            <figcaption class="overlay-bg">
-                                <a href="" class="cat-box">
-                                    <div>
-                                        <div class="icon">
-                                            <span class="la la-cutlery"></span>
-                                        </div>
-                                        <h4 class="cat-name">Restaurants</h4>
-                                        <span class="badge badge-pill badge-success">48 Listings</span>
-                                    </div>
-                                </a>
-                            </figcaption>
-                        </figure>
-                    </div><!-- ends: .category-single -->
-                </div><!-- ends: .col -->
-                <div class="col-lg-4 col-sm-6">
-                    <div class="category-single category--img">
-                        <figure class="category--img4">
-                            <img src="{{ asset('img/cat2.jpg')}}" alt="">
-                            <figcaption class="overlay-bg">
-                                <a href="" class="cat-box">
-                                    <div>
-                                        <div class="icon">
-                                            <span class="la la-map-marker"></span>
-                                        </div>
-                                        <h4 class="cat-name">Places &amp; Destination</h4>
-                                        <span class="badge badge-pill badge-success">74 Listings</span>
-                                    </div>
-                                </a>
-                            </figcaption>
-                        </figure>
-                    </div><!-- ends: .category-single -->
-                </div><!-- ends: .col -->
-                <div class="col-lg-4 col-sm-6">
-                    <div class="category-single category--img">
-                        <figure class="category--img4">
-                            <img src="{{ asset('img/cat3.jpg')}}" alt="">
-                            <figcaption class="overlay-bg">
-                                <a href="" class="cat-box">
-                                    <div>
-                                        <div class="icon">
-                                            <span class="la la-shopping-cart"></span>
-                                        </div>
-                                        <h4 class="cat-name">Shopping &amp; Store</h4>
-                                        <span class="badge badge-pill badge-success">27 Listings</span>
-                                    </div>
-                                </a>
-                            </figcaption>
-                        </figure>
-                    </div><!-- ends: .category-single -->
-                </div><!-- ends: .col -->
-                <div class="col-lg-4 col-sm-6">
-                    <div class="category-single category--img">
-                        <figure class="category--img4">
-                            <img src="{{ asset('img/cat4.jpg')}}" alt="">
-                            <figcaption class="overlay-bg">
-                                <a href="" class="cat-box">
-                                    <div>
-                                        <div class="icon">
-                                            <span class="la la-bank"></span>
-                                        </div>
-                                        <h4 class="cat-name">Art &amp; History</h4>
-                                        <span class="badge badge-pill badge-success">103 Listings</span>
-                                    </div>
-                                </a>
-                            </figcaption>
-                        </figure>
-                    </div><!-- ends: .category-single -->
-                </div><!-- ends: .col -->
-                <div class="col-lg-4 col-sm-6">
-                    <div class="category-single category--img">
-                        <figure class="category--img4">
-                            <img src="{{ asset('img/cat5.jpg')}}" alt="">
-                            <figcaption class="overlay-bg">
-                                <a href="" class="cat-box">
-                                    <div>
-                                        <div class="icon">
-                                            <span class="la la-bed"></span>
-                                        </div>
-                                        <h4 class="cat-name">Hotel &amp; Travel</h4>
-                                        <span class="badge badge-pill badge-success">11 Listings</span>
-                                    </div>
-                                </a>
-                            </figcaption>
-                        </figure>
-                    </div><!-- ends: .category-single -->
-                </div><!-- ends: .col -->
-                <div class="col-lg-4 col-sm-6">
-                    <div class="category-single category--img">
-                        <figure class="category--img4">
-                            <img src="{{ asset('img/cat6.jpg')}}" alt="">
-                            <figcaption class="overlay-bg">
-                                <a href="" class="cat-box">
-                                    <div>
-                                        <div class="icon">
-                                            <span class="la la-glass"></span>
-                                        </div>
-                                        <h4 class="cat-name">Food &amp; Drink</h4>
-                                        <span class="badge badge-pill badge-success">29 Listings</span>
-                                    </div>
-                                </a>
-                            </figcaption>
-                        </figure>
-                    </div><!-- ends: .category-single -->
-                </div><!-- ends: .col -->
-            </div>
+    <section class="ftco-section services-section bg-light">
+      <div class="container">
+        <div class="row d-flex">
+          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block text-center">
+              <div class="d-flex justify-content-center"><div class="icon"><span class="flaticon-guarantee"></span></div></div>
+              <div class="media-body p-2 mt-2">
+                <h3 class="heading mb-3">Best Price Guarantee</h3>
+                <p>A small river named Duden flows by their place and supplies.</p>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block text-center">
+              <div class="d-flex justify-content-center"><div class="icon"><span class="flaticon-like"></span></div></div>
+              <div class="media-body p-2 mt-2">
+                <h3 class="heading mb-3">Travellers Love Us</h3>
+                <p>A small river named Duden flows by their place and supplies.</p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block text-center">
+              <div class="d-flex justify-content-center"><div class="icon"><span class="flaticon-detective"></span></div></div>
+              <div class="media-body p-2 mt-2">
+                <h3 class="heading mb-3">Best Travel Agent</h3>
+                <p>A small river named Duden flows by their place and supplies.</p>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block text-center">
+              <div class="d-flex justify-content-center"><div class="icon"><span class="flaticon-support"></span></div></div>
+              <div class="media-body p-2 mt-2">
+                <h3 class="heading mb-3">Our Dedicated Support</h3>
+                <p>A small river named Duden flows by their place and supplies.</p>
+              </div>
+            </div>      
+          </div>
         </div>
-    </section><!-- ends: .categories-cards -->
-    <section class="listing-cards section-bg section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Best Listings Around Pakistan</h2>
-                        <p>Explore the popular listings around the world</p>
-                    </div>
-                </div>
-                <div class="listing-cards-wrapper col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="atbd_single_listing ">
-                                <article class="atbd_single_listing_wrapper">
-                                    <figure class="atbd_listing_thumbnail_area">
-                                        <div class="atbd_listing_image">
-                                            <a href="">
-                                                <img src="{{ asset('img/p1.jpg')}}" alt="listing image">
-                                            </a>
-                                        </div><!-- ends: .atbd_listing_image -->
-                                        <div class="atbd_author atbd_author--thumb">
-                                            <a href="">
-                                                <img src="img/author-thumb2.jpg" alt="Author Image">
-                                                <span class="custom-tooltip">Jeffery A, Owner</span>
-                                            </a>
-                                        </div>
-                                        <div class="atbd_thumbnail_overlay_content">
-                                            <ul class="atbd_upper_badge">
-                                                <li><span class="atbd_badge atbd_badge_featured">Featured</span></li>
-                                            </ul><!-- ends .atbd_upper_badge -->
-                                        </div><!-- ends: .atbd_thumbnail_overlay_content -->
-                                    </figure><!-- ends: .atbd_listing_thumbnail_area -->
-                                    <div class="atbd_listing_info">
-                                        <div class="atbd_content_upper">
-                                            <h4 class="atbd_listing_title">
-                                                <a href="">Flanders Heat &amp; Air Systems</a>
-                                            </h4>
-                                            <div class="atbd_listing_meta">
-                                                <span class="atbd_meta atbd_listing_rating">4.5<i class="la la-star"></i></span>
-                                                <span class="atbd_meta atbd_listing_price">$55.00</span>
-                                                <span class="atbd_meta atbd_badge_open">Open Now</span>
-                                            </div><!-- End atbd listing meta -->
-                                            <div class="atbd_listing_data_list">
-                                                <ul>
-                                                    <li>
-                                                        <p><span class="la la-map-marker"></span>Los Angeles, United States</p>
-                                                    </li>
-                                                    <li>
-                                                        <p><span class="la la-phone"></span>(415) 796-3633</p>
-                                                    </li>
-                                                    <li>
-                                                        <p><span class="la la-calendar-check-o"></span>Posted 2 months ago</p>
-                                                    </li>
-                                                </ul>
-                                            </div><!-- End atbd listing meta -->
-                                        </div><!-- end .atbd_content_upper -->
-                                        <div class="atbd_listing_bottom_content">
-                                            <div class="atbd_content_left">
-                                                <div class="atbd_listing_category">
-                                                    <a href=""><span class="la la-glass"></span>Restaurant</a>
-                                                </div>
-                                            </div>
-                                            <ul class="atbd_content_right">
-                                                <li class="atbd_count"><span class="la la-eye"></span>900+</li>
-                                                <li class="atbd_save">
-                                                    <span class="la la-heart-o"></span>
-                                                </li>
-                                            </ul>
-                                        </div><!-- end .atbd_listing_bottom_content -->
-                                    </div><!-- ends: .atbd_listing_info -->
-                                </article><!-- atbd_single_listing_wrapper -->
-                            </div>
-                        </div><!-- ends: .col-lg-4 -->
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="atbd_single_listing ">
-                                <article class="atbd_single_listing_wrapper">
-                                    <figure class="atbd_listing_thumbnail_area">
-                                        <div class="atbd_listing_image">
-                                            <a href="">
-                                                <img src="{{ asset('img/p2.jpg')}}" alt="listing image">
-                                            </a>
-                                        </div><!-- ends: .atbd_listing_image -->
-                                        <div class="atbd_author atbd_author--thumb">
-                                            <a href="">
-                                                <img src="{{ asset('img/author-thumb2.jpg')}}" alt="Author Image">
-                                                <span class="custom-tooltip">Jeffery A, Owner</span>
-                                            </a>
-                                        </div>
-                                        <div class="atbd_thumbnail_overlay_content">
-                                            <ul class="atbd_upper_badge">
-                                                <li><span class="atbd_badge atbd_badge_popular">Popular</span></li>
-                                            </ul><!-- ends .atbd_upper_badge -->
-                                        </div><!-- ends: .atbd_thumbnail_overlay_content -->
-                                    </figure><!-- ends: .atbd_listing_thumbnail_area -->
-                                    <div class="atbd_listing_info">
-                                        <div class="atbd_content_upper">
-                                            <h4 class="atbd_listing_title">
-                                                <a href="">Sydney Restaurant Towers</a>
-                                            </h4>
-                                            <div class="atbd_listing_meta">
-                                                <span class="atbd_meta atbd_listing_rating">4.5<i class="la la-star"></i></span>
-                                                <span class="atbd_meta atbd_listing_average_pricing" data-toggle="tooltip" data-placement="top" title="" data-original-title="Average">
-                                                    <span class="atbd_active"><img src="{{ asset('img/svg/dollar.svg')}}" class="svg" alt="" /></span>
-                                                    <span class="atbd_active"><img src="{{ asset('img/svg/dollar.svg')}}" class="svg" alt="" /></span>
-                                                    <span><img src="{{ asset('img/svg/dollar.svg')}}" class="svg" alt="" /></span>
-                                                    <span><img src="{{ asset('img/svg/dollar.svg')}}" class="svg" alt="" /></span>
-                                                </span>
-                                                <span class="atbd_meta atbd_badge_close">Closed</span>
-                                            </div><!-- End atbd listing meta -->
-                                            <div class="atbd_listing_data_list">
-                                                <ul>
-                                                    <li>
-                                                        <p><span class="la la-map-marker"></span>Los Angeles, United States</p>
-                                                    </li>
-                                                    <li>
-                                                        <p><span class="la la-phone"></span>(415) 796-3633</p>
-                                                    </li>
-                                                    <li>
-                                                        <p><span class="la la-calendar-check-o"></span>Posted 2 months ago</p>
-                                                    </li>
-                                                </ul>
-                                            </div><!-- End atbd listing meta -->
-                                        </div><!-- end .atbd_content_upper -->
-                                        <div class="atbd_listing_bottom_content">
-                                            <div class="atbd_content_left">
-                                                <div class="atbd_listing_category">
-                                                    <a href=""><span class="la la-map-marker"></span>Places</a>
-                                                    <div class="atbd_cat_popup">
-                                                        <span>+2</span>
-                                                        <div class="atbd_cat_popup_wrapper">
-                                                            <span><a href="">Event</a></span>
-                                                            <span><a href="">Food</a></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <ul class="atbd_content_right">
-                                                <li class="atbd_count"><span class="la la-eye"></span>900+</li>
-                                                <li class="atbd_save">
-                                                    <span class="la la-heart-o"></span>
-                                                </li>
-                                            </ul>
-                                        </div><!-- end .atbd_listing_bottom_content -->
-                                    </div><!-- ends: .atbd_listing_info -->
-                                </article><!-- atbd_single_listing_wrapper -->
-                            </div>
-                        </div><!-- ends: .col-lg-4 -->
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="atbd_single_listing ">
-                                <article class="atbd_single_listing_wrapper">
-                                    <figure class="atbd_listing_thumbnail_area">
-                                        <div class="atbd_listing_image">
-                                            <a href="">
-                                                <img src="{{ asset('img/p3.jpg')}}" alt="listing image">
-                                            </a>
-                                        </div><!-- ends: .atbd_listing_image -->
-                                        <div class="atbd_author atbd_author--thumb">
-                                            <a href="">
-                                                <img src="{{ asset('img/author-thumb2.jpg')}}" alt="Author Image">
-                                                <span class="custom-tooltip">Jeffery A, Owner</span>
-                                            </a>
-                                        </div>
-                                        <div class="atbd_thumbnail_overlay_content">
-                                            <ul class="atbd_upper_badge">
-                                                <li><span class="atbd_badge atbd_badge_new">New</span></li>
-                                            </ul><!-- ends .atbd_upper_badge -->
-                                        </div><!-- ends: .atbd_thumbnail_overlay_content -->
-                                    </figure><!-- ends: .atbd_listing_thumbnail_area -->
-                                    <div class="atbd_listing_info">
-                                        <div class="atbd_content_upper">
-                                            <h4 class="atbd_listing_title">
-                                                <a href="">Kung Food &amp; Drinks</a>
-                                            </h4>
-                                            <div class="atbd_listing_meta">
-                                                <span class="atbd_meta atbd_listing_rating">4.5<i class="la la-star"></i></span>
-                                                <span class="atbd_meta atbd_listing_average_pricing" data-toggle="tooltip" data-placement="top" title="" data-original-title="Average">
-                                                    <span class="atbd_active"><img src="{{ asset('img/svg/dollar.svg')}}" class="svg" alt="" /></span>
-                                                    <span class="atbd_active"><img src="{{ asset('img/svg/dollar.svg')}}" class="svg" alt="" /></span>
-                                                    <span><img src="{{ asset('img/svg/dollar.svg')}}" class="svg" alt="" /></span>
-                                                    <span><img src="{{ asset('img/svg/dollar.svg')}}" class="svg" alt="" /></span>
-                                                </span>
-                                                <span class="atbd_meta atbd_badge_close">Closed</span>
-                                            </div><!-- End atbd listing meta -->
-                                            <div class="atbd_listing_data_list">
-                                                <ul>
-                                                    <li>
-                                                        <p><span class="la la-map-marker"></span>Los Angeles, United States</p>
-                                                    </li>
-                                                    <li>
-                                                        <p><span class="la la-phone"></span>(415) 796-3633</p>
-                                                    </li>
-                                                    <li>
-                                                        <p><span class="la la-calendar-check-o"></span>Posted 2 months ago</p>
-                                                    </li>
-                                                </ul>
-                                            </div><!-- End atbd listing meta -->
-                                        </div><!-- end .atbd_content_upper -->
-                                        <div class="atbd_listing_bottom_content">
-                                            <div class="atbd_content_left">
-                                                <div class="atbd_listing_category">
-                                                    <a href=""><span class="la la-shopping-cart"></span>Shopping</a>
-                                                </div>
-                                            </div>
-                                            <ul class="atbd_content_right">
-                                                <li class="atbd_count"><span class="la la-eye"></span>900+</li>
-                                                <li class="atbd_save">
-                                                    <span class="la la-heart-o"></span>
-                                                </li>
-                                            </ul>
-                                        </div><!-- end .atbd_listing_bottom_content -->
-                                    </div><!-- ends: .atbd_listing_info -->
-                                </article><!-- atbd_single_listing_wrapper -->
-                            </div>
-                        </div><!-- ends: .col-lg-4 -->
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="atbd_single_listing ">
-                                <article class="atbd_single_listing_wrapper">
-                                    <figure class="atbd_listing_thumbnail_area">
-                                        <div class="atbd_listing_image">
-                                            <a href="">
-                                                <img src="{{asset('img/p4.jpg')}}" alt="listing image">
-                                            </a>
-                                        </div><!-- ends: .atbd_listing_image -->
-                                        <div class="atbd_author atbd_author--thumb">
-                                            <a href="">
-                                                <img src="{{ asset('img/author-thumb2.jpg')}}" alt="Author Image">
-                                                <span class="custom-tooltip">Jeffery A, Owner</span>
-                                            </a>
-                                        </div>
-                                        <div class="atbd_thumbnail_overlay_content">
-                                            <ul class="atbd_upper_badge">
-                                                <li><span class="atbd_badge atbd_badge_featured">Featured</span></li>
-                                                <li><span class="atbd_badge atbd_badge_popular">Popular</span></li>
-                                            </ul><!-- ends .atbd_upper_badge -->
-                                        </div><!-- ends: .atbd_thumbnail_overlay_content -->
-                                    </figure><!-- ends: .atbd_listing_thumbnail_area -->
-                                    <div class="atbd_listing_info">
-                                        <div class="atbd_content_upper">
-                                            <h4 class="atbd_listing_title">
-                                                <a href="">Favorite Place Fog Bank</a>
-                                            </h4>
-                                            <div class="atbd_listing_meta">
-                                                <span class="atbd_meta atbd_listing_rating">4.5<i class="la la-star"></i></span>
-                                                <span class="atbd_meta atbd_listing_average_pricing" data-toggle="tooltip" data-placement="top" title="" data-original-title="Average">
-                                                    <span class="atbd_active"><img src="{{ asset('img/svg/dollar.svg')}}" class="svg" alt="" /></span>
-                                                    <span class="atbd_active"><img src="{{ asset('img/svg/dollar.svg')}}" class="svg" alt="" /></span>
-                                                    <span><img src="{{ asset('img/svg/dollar.svg')}}" class="svg" alt="" /></span>
-                                                    <span><img src="{{ asset('img/svg/dollar.svg')}}" class="svg" alt="" /></span>
-                                                </span>
-                                                <span class="atbd_meta atbd_badge_open">Open Now</span>
-                                            </div><!-- End atbd listing meta -->
-                                            <div class="atbd_listing_data_list">
-                                                <ul>
-                                                    <li>
-                                                        <p><span class="la la-map-marker"></span>Los Angeles, United States</p>
-                                                    </li>
-                                                    <li>
-                                                        <p><span class="la la-phone"></span>(415) 796-3633</p>
-                                                    </li>
-                                                    <li>
-                                                        <p><span class="la la-calendar-check-o"></span>Posted 2 months ago</p>
-                                                    </li>
-                                                </ul>
-                                            </div><!-- End atbd listing meta -->
-                                        </div><!-- end .atbd_content_upper -->
-                                        <div class="atbd_listing_bottom_content">
-                                            <div class="atbd_content_left">
-                                                <div class="atbd_listing_category">
-                                                    <a href=""><span class="la la-bank"></span>Art &amp; History</a>
-                                                </div>
-                                            </div>
-                                            <ul class="atbd_content_right">
-                                                <li class="atbd_count"><span class="la la-eye"></span>900+</li>
-                                                <li class="atbd_save">
-                                                    <span class="la la-heart-o"></span>
-                                                </li>
-                                            </ul>
-                                        </div><!-- end .atbd_listing_bottom_content -->
-                                    </div><!-- ends: .atbd_listing_info -->
-                                </article><!-- atbd_single_listing_wrapper -->
-                            </div>
-                        </div><!-- ends: .col-lg-4 -->
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="atbd_single_listing ">
-                                <article class="atbd_single_listing_wrapper">
-                                    <figure class="atbd_listing_thumbnail_area">
-                                        <div class="atbd_listing_image">
-                                            <a href="">
-                                                <img src="{{ asset('img/p5.jpg')}}" alt="listing image">
-                                            </a>
-                                        </div><!-- ends: .atbd_listing_image -->
-                                        <div class="atbd_author atbd_author--thumb">
-                                            <a href="">
-                                                <img src="{{ asset('img/author-thumb2.jpg')}}" alt="Author Image">
-                                                <span class="custom-tooltip">Jeffery A, Owner</span>
-                                            </a>
-                                        </div>
-                                        <div class="atbd_thumbnail_overlay_content">
-                                            <ul class="atbd_upper_badge">
-                                            </ul><!-- ends .atbd_upper_badge -->
-                                        </div><!-- ends: .atbd_thumbnail_overlay_content -->
-                                    </figure><!-- ends: .atbd_listing_thumbnail_area -->
-                                    <div class="atbd_listing_info">
-                                        <div class="atbd_content_upper">
-                                            <h4 class="atbd_listing_title">
-                                                <a href="">Flanders Heat &amp; Air Systems</a>
-                                            </h4>
-                                            <div class="atbd_listing_meta">
-                                                <span class="atbd_meta atbd_listing_rating">4.5<i class="la la-star"></i></span>
-                                                <span class="atbd_meta atbd_listing_price">$55.00</span>
-                                                <span class="atbd_meta atbd_badge_close">Closed</span>
-                                            </div><!-- End atbd listing meta -->
-                                            <div class="atbd_listing_data_list">
-                                                <ul>
-                                                    <li>
-                                                        <p><span class="la la-map-marker"></span>Los Angeles, United States</p>
-                                                    </li>
-                                                    <li>
-                                                        <p><span class="la la-phone"></span>(415) 796-3633</p>
-                                                    </li>
-                                                    <li>
-                                                        <p><span class="la la-calendar-check-o"></span>Posted 2 months ago</p>
-                                                    </li>
-                                                </ul>
-                                            </div><!-- End atbd listing meta -->
-                                        </div><!-- end .atbd_content_upper -->
-                                        <div class="atbd_listing_bottom_content">
-                                            <div class="atbd_content_left">
-                                                <div class="atbd_listing_category">
-                                                    <a href=""><span class="la la-bed"></span>Hotel &amp; Travel</a>
-                                                </div>
-                                            </div>
-                                            <ul class="atbd_content_right">
-                                                <li class="atbd_count"><span class="la la-eye"></span>900+</li>
-                                                <li class="atbd_save">
-                                                    <span class="la la-heart-o"></span>
-                                                </li>
-                                            </ul>
-                                        </div><!-- end .atbd_listing_bottom_content -->
-                                    </div><!-- ends: .atbd_listing_info -->
-                                </article><!-- atbd_single_listing_wrapper -->
-                            </div>
-                        </div><!-- ends: .col-lg-4 -->
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="atbd_single_listing ">
-                                <article class="atbd_single_listing_wrapper">
-                                    <figure class="atbd_listing_thumbnail_area">
-                                        <div class="atbd_listing_image">
-                                            <a href="">
-                                                <img src="{{ asset('img/p6.jpg')}}" alt="listing image">
-                                            </a>
-                                        </div><!-- ends: .atbd_listing_image -->
-                                        <div class="atbd_author atbd_author--thumb">
-                                            <a href="">
-                                                <img src="{{ asset('img/author-thumb2.jpg')}}" alt="Author Image">
-                                                <span class="custom-tooltip">Jeffery A, Owner</span>
-                                            </a>
-                                        </div>
-                                        <div class="atbd_thumbnail_overlay_content">
-                                            <ul class="atbd_upper_badge">
-                                            </ul><!-- ends .atbd_upper_badge -->
-                                        </div><!-- ends: .atbd_thumbnail_overlay_content -->
-                                    </figure><!-- ends: .atbd_listing_thumbnail_area -->
-                                    <div class="atbd_listing_info">
-                                        <div class="atbd_content_upper">
-                                            <h4 class="atbd_listing_title">
-                                                <a href="">Store Clothing Shopping Mall</a>
-                                            </h4>
-                                            <div class="atbd_listing_meta">
-                                                <span class="atbd_meta atbd_listing_rating">4.5<i class="la la-star"></i></span>
-                                                <span class="atbd_meta atbd_listing_average_pricing" data-toggle="tooltip" data-placement="top" title="" data-original-title="Average">
-                                                    <span class="atbd_active"><img src="{{ asset('img/svg/dollar.svg')}}" class="svg" alt="" /></span>
-                                                    <span class="atbd_active"><img src="{{ asset('img/svg/dollar.svg')}}" class="svg" alt="" /></span>
-                                                    <span><img src="{{ asset('img/svg/dollar.svg')}}" class="svg" alt="" /></span>
-                                                    <span><img src="{{ asset('img/svg/dollar.svg')}}" class="svg" alt="" /></span>
-                                                </span>
-                                                <span class="atbd_meta atbd_badge_open">Open Now</span>
-                                            </div><!-- End atbd listing meta -->
-                                            <div class="atbd_listing_data_list">
-                                                <ul>
-                                                    <li>
-                                                        <p><span class="la la-map-marker"></span>Los Angeles, United States</p>
-                                                    </li>
-                                                    <li>
-                                                        <p><span class="la la-phone"></span>(415) 796-3633</p>
-                                                    </li>
-                                                    <li>
-                                                        <p><span class="la la-calendar-check-o"></span>Posted 2 months ago</p>
-                                                    </li>
-                                                </ul>
-                                            </div><!-- End atbd listing meta -->
-                                        </div><!-- end .atbd_content_upper -->
-                                        <div class="atbd_listing_bottom_content">
-                                            <div class="atbd_content_left">
-                                                <div class="atbd_listing_category">
-                                                    <a href=""><span class="la la-cutlery"></span>Food &amp; Drink</a>
-                                                    <div class="atbd_cat_popup">
-                                                        <span>+2</span>
-                                                        <div class="atbd_cat_popup_wrapper">
-                                                            <span><a href="">Event</a></span>
-                                                            <span><a href="">Food</a></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <ul class="atbd_content_right">
-                                                <li class="atbd_count"><span class="la la-eye"></span>900+</li>
-                                                <li class="atbd_save">
-                                                    <span class="la la-heart-o"></span>
-                                                </li>
-                                            </ul>
-                                        </div><!-- end .atbd_listing_bottom_content -->
-                                    </div><!-- ends: .atbd_listing_info -->
-                                </article><!-- atbd_single_listing_wrapper -->
-                            </div>
-                        </div><!-- ends: .col-lg-4 -->
-                        <div class="col-lg-12 text-center m-top-20">
-                            <a href="" class="btn btn-gradient btn-gradient-two">Explore All 200+</a>
-                        </div>
-                    </div>
-                </div><!-- ends: .listing-cards-wrapper -->
-            </div>
+      </div>
+    </section>
+    
+    <section class="ftco-section ftco-destination">
+    	<div class="container">
+    		<div class="row justify-content-start mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate">
+          	<span class="subheading">Featured</span>
+            <h2 class="mb-4"><strong>Featured</strong> Destination</h2>
+          </div>
         </div>
-    </section><!-- ends: .listing-cards -->
-    <section class="cta section-padding border-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Why <span>Direo</span> for your Business?</h2>
-                        <p>Explore the popular listings around the world</p>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 col-md-6">
-                            <img src="{{ asset('img/svg/illustration-1.svg')}}" alt="" class="svg">
-                        </div>
-                        <div class="col-lg-5 offset-lg-1 col-md-6 mt-5 mt-md-0">
-                            <ul class="feature-list-wrapper list-unstyled">
-                                <li>
-                                    <div class="icon"><span class="circle-secondary"><i class="la la-check-circle"></i></span></div>
-                                    <div class="list-content">
-                                        <h4>Claim Listing</h4>
-                                        <p>Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon"><span class="circle-success"><i class="la la-money"></i></span></div>
-                                    <div class="list-content">
-                                        <h4>Paid Listing</h4>
-                                        <p>Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon"><span class="circle-primary"><i class="la la-line-chart"></i></span></div>
-                                    <div class="list-content">
-                                        <h4>Promote your Business</h4>
-                                        <p>Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit.</p>
-                                    </div>
-                                </li>
-                            </ul><!-- ends: .feature-list-wrapper -->
-                            <ul class="action-btns list-unstyled">
-                                <li><a href="" class="btn btn-success">See our Pricing</a></li>
-                                <li><a href="" class="btn btn-primary">Submit Listings</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    		<div class="row">
+    			<div class="col-md-12">
+    				<div class="destination-slider owl-carousel ftco-animate">
+    					<div class="item">
+		    				<div class="destination">
+		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('userassets/images/destination-1.jpg')}}');">
+		    						<div class="icon d-flex justify-content-center align-items-center">
+		    							<span class="icon-search2"></span>
+		    						</div>
+		    					</a>
+		    					<div class="text p-3">
+		    						<h3><a href="#">Paris, Italy</a></h3>
+		    						<span class="listing">15 Listing</span>
+		    					</div>
+		    				</div>
+	    				</div>
+	    				<div class="item">
+		    				<div class="destination">
+		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('userassets/images/destination-2.jpg')}}');">
+		    						<div class="icon d-flex justify-content-center align-items-center">
+		    							<span class="icon-search2"></span>
+		    						</div>
+		    					</a>
+		    					<div class="text p-3">
+		    						<h3><a href="#">San Francisco, USA</a></h3>
+		    						<span class="listing">20 Listing</span>
+		    					</div>
+		    				</div>
+	    				</div>
+	    				<div class="item">
+		    				<div class="destination">
+		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('userassets/images/destination-3.jpg')}}');">
+		    						<div class="icon d-flex justify-content-center align-items-center">
+		    							<span class="icon-search2"></span>
+		    						</div>
+		    					</a>
+		    					<div class="text p-3">
+		    						<h3><a href="#">Lodon, UK</a></h3>
+		    						<span class="listing">10 Listing</span>
+		    					</div>
+		    				</div>
+	    				</div>
+	    				<div class="item">
+		    				<div class="destination">
+		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('userassets/images/destination-4.jpg')}}');">
+		    						<div class="icon d-flex justify-content-center align-items-center">
+		    							<span class="icon-search2"></span>
+		    						</div>
+		    					</a>
+		    					<div class="text p-3">
+		    						<h3><a href="#">Lion, Singapore</a></h3>
+		    						<span class="listing">3 Listing</span>
+		    					</div>
+		    				</div>
+	    				</div>
+	    				<div class="item">
+		    				<div class="destination">
+		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('userassets/images/destination-5.jpg')}}');">
+		    						<div class="icon d-flex justify-content-center align-items-center">
+		    							<span class="icon-search2"></span>
+		    						</div>
+		    					</a>
+		    					<div class="text p-3">
+		    						<h3><a href="#">Australia</a></h3>
+		    						<span class="listing">3 Listing</span>
+		    					</div>
+		    				</div>
+	    				</div>
+	    				<div class="item">
+		    				<div class="destination">
+		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('userassets/images/destination-6.jpg')}}');">
+		    						<div class="icon d-flex justify-content-center align-items-center">
+		    							<span class="icon-search2"></span>
+		    						</div>
+		    					</a>
+		    					<div class="text p-3">
+		    						<h3><a href="#">Paris, Italy</a></h3>
+		    						<span class="listing">3 Listing</span>
+		    					</div>
+		    				</div>
+	    				</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+    <section class="ftco-section bg-light">
+    	<div class="container">
+				<div class="row justify-content-start mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate">
+          	<span class="subheading">Special Offers</span>
+            <h2 class="mb-4"><strong>Top</strong>Tour Packages</h2>
+          </div>
+        </div>    		
+    	</div>
+    	<div class="container-fluid">
+    		<div class="row">
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="destination">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('userassets/images/destination-1.jpg')}}');">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-search2"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<div class="d-flex">
+    							<div class="one">
+		    						<h3><a href="#">Paris, Italy</a></h3>
+		    						<p class="rate">
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star-o"></i>
+		    							<span>8 Rating</span>
+		    						</p>
+	    						</div>
+	    						<div class="two">
+	    							<span class="price">$200</span>
+    							</div>
+    						</div>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<p class="days"><span>2 days 3 nights</span></p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> San Franciso, CA</span> 
+    							<span class="ml-auto"><a href="#">Discover</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="destination">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('userassets/images/destination-2.jpg')}}');">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-search2"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<div class="d-flex">
+    							<div class="one">
+		    						<h3><a href="#">Paris, Italy</a></h3>
+		    						<p class="rate">
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star-o"></i>
+		    							<span>8 Rating</span>
+		    						</p>
+	    						</div>
+	    						<div class="two">
+	    							<span class="price">$200</span>
+    							</div>
+    						</div>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<p class="days"><span>2 days 3 nights</span></p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> San Franciso, CA</span> 
+    							<span class="ml-auto"><a href="#">Discover</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="destination">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('userassets/images/destination-3.jpg')}}');">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-search2"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<div class="d-flex">
+    							<div class="one">
+		    						<h3><a href="#">Paris, Italy</a></h3>
+		    						<p class="rate">
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star-o"></i>
+		    							<span>8 Rating</span>
+		    						</p>
+	    						</div>
+	    						<div class="two">
+	    							<span class="price">$200</span>
+    							</div>
+    						</div>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<p class="days"><span>2 days 3 nights</span></p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> San Franciso, CA</span> 
+    							<span class="ml-auto"><a href="#">Discover</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="destination">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('userassets/images/destination-4.jpg')}}');">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-search2"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<div class="d-flex">
+    							<div class="one">
+		    						<h3><a href="#">Paris, Italy</a></h3>
+		    						<p class="rate">
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star-o"></i>
+		    							<span>8 Rating</span>
+		    						</p>
+	    						</div>
+	    						<div class="two">
+	    							<span class="price">$200</span>
+    							</div>
+    						</div>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<p class="days"><span>2 days 3 nights</span></p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> San Franciso, CA</span> 
+    							<span class="ml-auto"><a href="#">Discover</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="destination">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('userassets/images/destination-5.jpg')}}');">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-search2"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<div class="d-flex">
+    							<div class="one">
+		    						<h3><a href="#">Paris, Italy</a></h3>
+		    						<p class="rate">
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star-o"></i>
+		    							<span>8 Rating</span>
+		    						</p>
+	    						</div>
+	    						<div class="two">
+	    							<span class="price">$200</span>
+    							</div>
+    						</div>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<p class="days"><span>2 days 3 nights</span></p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> San Franciso, CA</span> 
+    							<span class="ml-auto"><a href="#">Discover</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url('{{ asset('userassets/images/bg_1.jpg')}}');">
+    	<div class="container">
+    		<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+            <h2 class="mb-4">Some fun facts</h2>
+            <span class="subheading">More than 100,000 websites hosted</span>
+          </div>
         </div>
-    </section><!-- ends: .cta -->
-    <section class="places section-padding">
+    		<div class="row justify-content-center">
+    			<div class="col-md-10">
+		    		<div class="row">
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		                <strong class="number" data-number="100000">0</strong>
+		                <span>Happy Customers</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		                <strong class="number" data-number="40000">0</strong>
+		                <span>Destination Places</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		                <strong class="number" data-number="87000">0</strong>
+		                <span>Hotels</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		                <strong class="number" data-number="56400">0</strong>
+		                <span>Restaurant</span>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+	        </div>
+        </div>
+    	</div>
+    </section>
+
+
+    <section class="ftco-section">
+    	<div class="container">
+				<div class="row justify-content-start mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate">
+          	<span class="subheading">Special Offers</span>
+            <h2 class="mb-4"><strong>Popular</strong>Tours</h2>
+          </div>
+        </div>    		
+    	</div>
+    	<div class="container-fluid">
+    		<div class="row">
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="destination">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('userassets/images/hotel-1.jpg')}}');">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-search2"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<div class="d-flex">
+    							<div class="one">
+		    						<h3><a href="#">Hotel, Italy</a></h3>
+		    						<p class="rate">
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star-o"></i>
+		    							<span>8 Rating</span>
+		    						</p>
+	    						</div>
+	    						<div class="two">
+	    							<span class="price per-price">$40<br><small>/night</small></span>
+    							</div>
+    						</div>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> Miami, Fl</span> 
+    							<span class="ml-auto"><a href="#">Book Now</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="destination">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('userassets/images/hotel-2.jpg')}}');">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-search2"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<div class="d-flex">
+    							<div class="one">
+		    						<h3><a href="#">Hotel, Italy</a></h3>
+		    						<p class="rate">
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star-o"></i>
+		    							<span>8 Rating</span>
+		    						</p>
+	    						</div>
+	    						<div class="two">
+	    							<span class="price per-price">$40<br><small>/night</small></span>
+    							</div>
+    						</div>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> Miami, Fl</span> 
+    							<span class="ml-auto"><a href="#">Book Now</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="destination">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('userassets/images/hotel-3.jpg')}}');">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-search2"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<div class="d-flex">
+    							<div class="one">
+		    						<h3><a href="#">Hotel, Italy</a></h3>
+		    						<p class="rate">
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star-o"></i>
+		    							<span>8 Rating</span>
+		    						</p>
+	    						</div>
+	    						<div class="two">
+	    							<span class="price per-price">$40<br><small>/night</small></span>
+    							</div>
+    						</div>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> Miami, Fl</span> 
+    							<span class="ml-auto"><a href="#">Book Now</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="destination">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('userassets/images/hotel-4.jpg')}}');">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-search2"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<div class="d-flex">
+    							<div class="one">
+		    						<h3><a href="#">Hotel, Italy</a></h3>
+		    						<p class="rate">
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star-o"></i>
+		    							<span>8 Rating</span>
+		    						</p>
+	    						</div>
+	    						<div class="two">
+	    							<span class="price per-price">$40<br><small>/night</small></span>
+    							</div>
+    						</div>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> Miami, Fl</span> 
+    							<span class="ml-auto"><a href="#">Book Now</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="destination">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('userassets/images/hotel-5.jpg')}}');">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-search2"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<div class="d-flex">
+    							<div class="one">
+		    						<h3><a href="#">Hotel, Italy</a></h3>
+		    						<p class="rate">
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star-o"></i>
+		    							<span>8 Rating</span>
+		    						</p>
+	    						</div>
+	    						<div class="two">
+	    							<span class="price per-price">$40<br><small>/night</small></span>
+    							</div>
+    						</div>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> Miami, Fl</span> 
+    							<span class="ml-auto"><a href="#">Book Now</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+    <section class="ftco-section testimony-section bg-light">
+      <div class="container">
+        <div class="row justify-content-start">
+          <div class="col-md-5 heading-section ftco-animate">
+          	<span class="subheading">Best Directory Website</span>
+            <h2 class="mb-4 pb-3"><strong>Why</strong> Choose Us?</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.</p>
+            <p><a href="#" class="btn btn-primary btn-outline-primary mt-4 px-4 py-3">Read more</a></p>
+          </div>
+					<div class="col-md-1"></div>
+          <div class="col-md-6 heading-section ftco-animate">
+          	<span class="subheading">Testimony</span>
+            <h2 class="mb-4 pb-3"><strong>Our</strong> Guests Says</h2>
+          	<div class="row ftco-animate">
+		          <div class="col-md-12">
+		            <div class="carousel-testimony owl-carousel">
+		              <div class="item">
+		                <div class="testimony-wrap d-flex">
+		                  <div class="user-img mb-5" style="background-image: url('{{ asset('userassets/images/person_1.jpg')}}');">
+		                    <span class="quote d-flex align-items-center justify-content-center">
+		                      <i class="icon-quote-left"></i>
+		                    </span>
+		                  </div>
+		                  <div class="text ml-md-4">
+		                    <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+		                    <p class="name">Dennis Green</p>
+		                    <span class="position">Guest from italy</span>
+		                  </div>
+		                </div>
+		              </div>
+		              <div class="item">
+		                <div class="testimony-wrap d-flex">
+		                  <div class="user-img mb-5" style="background-image: url('{{ asset('userassets/images/person_2.jpg')}}');">
+		                    <span class="quote d-flex align-items-center justify-content-center">
+		                      <i class="icon-quote-left"></i>
+		                    </span>
+		                  </div>
+		                  <div class="text ml-md-4">
+		                    <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+		                    <p class="name">Dennis Green</p>
+		                    <span class="position">Guest from London</span>
+		                  </div>
+		                </div>
+		              </div>
+		              <div class="item">
+		                <div class="testimony-wrap d-flex">
+		                  <div class="user-img mb-5" style="background-image: url('{{ asset('userassets/images/person_3.jpg')}}');">
+		                    <span class="quote d-flex align-items-center justify-content-center">
+		                      <i class="icon-quote-left"></i>
+		                    </span>
+		                  </div>
+		                  <div class="text ml-md-4">
+		                    <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+		                    <p class="name">Dennis Green</p>
+		                    <span class="position">Guest from Philippines</span>
+		                  </div>
+		                </div>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section">
+    	<div class="container">
+				<div class="row justify-content-start mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate">
+          	<span class="subheading">Special Offers</span>
+            <h2 class="mb-4"><strong>Favorite</strong> Destinations</h2>
+          </div>
+        </div>    		
+    		<div class="row">
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="destination">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('userassets/images/restaurant-1.jpg')}}');">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-search2"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<h3><a href="#">Luxury Restaurant</a></h3>
+    						<p class="rate">
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star-o"></i>
+    							<span>8 Rating</span>
+    						</p>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> San Franciso, CA</span> 
+    							<span class="ml-auto"><a href="#">Discover</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="destination">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('userassets/images/restaurant-2.jpg')}}');">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-search2"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<h3><a href="#">Luxury Restaurant</a></h3>
+    						<p class="rate">
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star-o"></i>
+    							<span>8 Rating</span>
+    						</p>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> San Franciso, CA</span> 
+    							<span class="ml-auto"><a href="#">Book Now</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="destination">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('userassets/images/restaurant-3.jpg')}}');">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-search2"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<h3><a href="#">Luxury Restaurant</a></h3>
+    						<p class="rate">
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star-o"></i>
+    							<span>8 Rating</span>
+    						</p>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> San Franciso, CA</span> 
+    							<span class="ml-auto"><a href="#">Book Now</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="destination">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('userassets/images/restaurant-4.jpg')}}');">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-search2"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<h3><a href="#">Luxury Restaurant</a></h3>
+    						<p class="rate">
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star-o"></i>
+    							<span>8 Rating</span>
+    						</p>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> San Franciso, CA</span> 
+    							<span class="ml-auto"><a href="#">Book Now</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+    <section class="ftco-section bg-light">
+      <div class="container">
+        <div class="row justify-content-start mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate">
+            <span class="subheading">Recent Blog</span>
+            <h2><strong>Tips</strong> &amp; Articles</h2>
+          </div>
+        </div>
+        <div class="row d-flex">
+          <div class="col-md-3 d-flex ftco-animate">
+            <div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('userassets/images/image_1.jpg')}}');">
+              </a>
+              <div class="text p-4 d-block">
+              	<span class="tag">Tips, Travel</span>
+                <h3 class="heading mt-3"><a href="#">8 Best homestay in Philippines that you don't miss out</a></h3>
+                <div class="meta mb-3">
+                  <div><a href="#">August 12, 2018</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 d-flex ftco-animate">
+            <div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('userassets/images/image_2.jpg')}}');">
+              </a>
+              <div class="text p-4">
+              	<span class="tag">Culture</span>
+                <h3 class="heading mt-3"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                <div class="meta mb-3">
+                  <div><a href="#">August 12, 2018</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 d-flex ftco-animate">
+            <div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('userassets/images/image_3.jpg')}}');">
+              </a>
+              <div class="text p-4">
+              	<span class="tag">Tips, Travel</span>
+                <h3 class="heading mt-3"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                <div class="meta mb-3">
+                  <div><a href="#">August 12, 2018</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 d-flex ftco-animate">
+            <div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('userassets/images/image_4.jpg')}}');">
+              </a>
+              <div class="text p-4">
+              	<span class="tag">Tips, Travel</span>
+                <h3 class="heading mt-3"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                <div class="meta mb-3">
+                  <div><a href="#">August 12, 2018</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+		
+		<section class="ftco-section-parallax">
+      <div class="parallax-img d-flex align-items-center">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Destination We Love</h2>
-                        <p>Explore best listings around the world by city</p>
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+              <h2>Subcribe to our Newsletter</h2>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+              <div class="row d-flex justify-content-center mt-5">
+                <div class="col-md-8">
+                  <form action="#" class="subscribe-form">
+                    <div class="form-group d-flex">
+                      <input type="text" class="form-control" placeholder="Enter email address">
+                      <input type="submit" value="Subscribe" class="submit px-3">
                     </div>
+                  </form>
                 </div>
-                <div class="col-lg-12">
-                    <div class="cat-places-wrapper">
-                        <div class="category-place-single">
-                            <figure>
-                                <a href=""><img src="{{ asset('img/place1.jpg')}}" alt=""></a>
-                                <figcaption>
-                                    <h3>London, UK</h3>
-                                    <p>68 Listings</p>
-                                </figcaption>
-                            </figure>
-                        </div><!-- ends: .category-place-single -->
-                        <div class="category-place-single">
-                            <figure>
-                                <a href=""><img src="{{ asset('img/place2.png')}}" alt=""></a>
-                                <figcaption>
-                                    <h3>New York</h3>
-                                    <p>68 Listings</p>
-                                </figcaption>
-                            </figure>
-                        </div><!-- ends: .category-place-single -->
-                        <div class="category-place-single">
-                            <figure>
-                                <a href=""><img src="{{ asset('img/place3.png')}}" alt=""></a>
-                                <figcaption>
-                                    <h3>Sydney</h3>
-                                    <p>68 Listings</p>
-                                </figcaption>
-                            </figure>
-                        </div><!-- ends: .category-place-single -->
-                        <div class="category-place-single">
-                            <figure>
-                                <a href=""><img src="{{ asset('img/place4.png')}}" alt=""></a>
-                                <figcaption>
-                                    <h3>Paris, France</h3>
-                                    <p>68 Listings</p>
-                                </figcaption>
-                            </figure>
-                        </div><!-- ends: .category-place-single -->
-                    </div><!-- ends: .col-lg-12 -->
-                </div>
-                <div class="col-lg-12">
-                    <div class="place-list-wrapper">
-                        <ul class="list-unstyled">
-                            <li><a href="">Dubai (45)</a></li>
-                            <li><a href="">Melbourne (95)</a></li>
-                            <li><a href="">Sydney (90)</a></li>
-                            <li><a href="">Brisbane (73)</a></li>
-                            <li><a href="">Perth (97)</a></li>
-                            <li><a href="">Toronto (960)</a></li>
-                            <li><a href="">Vancouver (46)</a></li>
-                            <li><a href="">Montreal (46)</a></li>
-                            <li><a href="">Calgary (16)</a></li>
-                            <li><a href="">Edmonton (6)</a></li>
-                            <li><a href="">Ottawa (53)</a></li>
-                            <li><a href="">Atlantic Canada (83)</a></li>
-                            <li><a href="">Berlin (71)</a></li>
-                            <li><a href="">Munich (46)</a></li>
-                            <li><a href="">Hamburg Area (727)</a></li>
-                            <li><a href="">Frankfurt Area (655)</a></li>
-                            <li><a href="">Stuttgart Area (9)</a></li>
-                            <li><a href="">Barcelona (46)</a></li>
-                            <li><a href="">Madrid (790)</a></li>
-                            <li><a href="">Spain (52)</a></li>
-                            <li><a href="">Dublin (657)</a></li>
-                            <li><a href="">Galway (12)</a></li>
-                            <li><a href="">Limerick (6)</a></li>
-                            <li><a href="">Tokyo, JP (24)</a></li>
-                            <li><a href="">Kanagawa (276)</a></li>
-                            <li><a href="">Osaka (146)</a></li>
-                            <li><a href="">Kyoto (70)</a></li>
-                            <li><a href="">Nagoya (64)</a></li>
-                            <li><a href="">Mexico City (195)</a></li>
-                            <li><a href="">Cancun (328)</a></li>
-                            <li><a href="">Monterrey (27)</a></li>
-                            <li><a href="">Baja California Sur (42)</a></li>
-                            <li><a href="">Amsterdam (446)</a></li>
-                            <li><a href="">Maastricht (3)</a></li>
-                            <li><a href="">London (25)</a></li>
-                            <li><a href="">Yorkshire (967)</a></li>
-                            <li><a href="">Edinburgh (923)</a></li>
-                            <li><a href="">Kent (80)</a></li>
-                            <li><a href="">Manchester (60)</a></li>
-                            <li><a href="">Glasgow (52)</a></li>
-                        </ul>
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </section><!-- ends: .places -->
-    <section class="testimonial-wrapper section-padding--bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Trusted By Over 4000+ Users</h2>
-                        <p>Here is what people say about Direo</p>
-                    </div>
-                </div><!-- ends: .col-lg-12 -->
-                <div class="testimonial-carousel owl-carousel">
-                    <div class="carousel-single">
-                        <div class="author-thumb">
-                            <img src="{{ asset('img/tthumb1.jpg')}}" alt="" class="rounded-circle">
-                        </div>
-                        <div class="author-info">
-                            <h4>Francis Burton</h4>
-                            <span>Toronto, Canada</span>
-                        </div>
-                        <p class="author-comment">Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit anim laborum sint occaecat cupidatat non proident. Occaecat cupidatat non proident
-                            culpa officia deserunt mollit.</p>
-                    </div><!-- ends: .carousel-single -->
-                    <div class="carousel-single">
-                        <div class="author-thumb">
-                            <img src="{{ asset('img/tthumb1.jpg')}}" alt="" class="rounded-circle">
-                        </div>
-                        <div class="author-info">
-                            <h4>Francis Burton</h4>
-                            <span>Toronto, Canada</span>
-                        </div>
-                        <p class="author-comment">Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit anim laborum sint occaecat cupidatat non proident. Occaecat cupidatat non proident
-                            culpa officia deserunt mollit.</p>
-                    </div><!-- ends: .carousel-single -->
-                    <div class="carousel-single">
-                        <div class="author-thumb">
-                            <img src="{{ asset('img/tthumb1.jpg')}}" alt="" class="rounded-circle">
-                        </div>
-                        <div class="author-info">
-                            <h4>Francis Burton</h4>
-                            <span>Toronto, Canada</span>
-                        </div>
-                        <p class="author-comment">Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit anim laborum sint occaecat cupidatat non proident. Occaecat cupidatat non proident
-                            culpa officia deserunt mollit.</p>
-                    </div><!-- ends: .carousel-single -->
-                </div><!-- ends: .testimonial-carousel -->
-            </div>
-        </div>
-    </section><!-- ends: .testimonial-wrapper -->
-    <section class="clients-logo-wrapper border-top p-top-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="logo-carousel owl-carousel">
-                        <div class="carousel-single">
-                            <img src="{{ asset('img/cl1.png')}}" alt="">
-                        </div>
-                        <div class="carousel-single">
-                            <img src="{{ asset('img/cl2.png')}}" alt="">
-                        </div>
-                        <div class="carousel-single">
-                            <img src="{{ asset('img/cl3.png')}}" alt="">
-                        </div>
-                        <div class="carousel-single">
-                            <img src="{{ asset('img/cl4.png')}}" alt="">
-                        </div>
-                        <div class="carousel-single">
-                            <img src="{{ asset('img/cl5.png')}}" alt="">
-                        </div>
-                        <div class="carousel-single">
-                            <img src="{{ asset('img/cl1.png')}}" alt="">
-                        </div>
-                    </div><!-- ends: .logo-carousel -->
-                </div>
-            </div>
-        </div>
-    </section><!-- ends: .clients-logo-wrapper -->
-    <section class="subscribe-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    <h1>Subscribe to Newsletter</h1>
-                    <p>Subscribe to get update and information. Don't worry, we won't send spam!</p>
-                    <form action="/" class="subscribe-form m-top-40">
-                        <div class="form-group">
-                            <span class="la la-envelope-o"></span>
-                            <input type="text" placeholder="Enter your email" required>
-                        </div>
-                        <button class="btn btn-gradient btn-gradient-one">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section><!-- ends: .subscribe-wrapper -->
-   @include('user.footer')
+      </div>
+    </section>
+
+   @include('user.templates.footer')

@@ -8,7 +8,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('dashboard/img/apple-icon.png') }}" >
   <link rel="icon" type="image/png"  href="{{ asset('dashboard/img/favicon.png') }}" >
   <title>
-    Gawadar Hub
+    TripsPlanners
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
